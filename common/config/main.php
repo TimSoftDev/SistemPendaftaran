@@ -6,4 +6,7 @@ return [
             'class' => 'yii\caching\FileCache',
         ],
     ],
+    'controllerMap' => [
+        'file' => 'mdm\upload\FileController', // use to show or download file
+    ],
 ];

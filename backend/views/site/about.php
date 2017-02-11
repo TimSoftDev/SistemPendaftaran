@@ -4,10 +4,10 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Beranda';
+$this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-index">
+<div class="site-about">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <code><?= __FILE__ ?></code>
