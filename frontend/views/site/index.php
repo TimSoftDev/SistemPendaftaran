@@ -4,8 +4,12 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Beranda';
+$this->title = 'Dasbor';
 $this->params['breadcrumbs'][] = $this->title;
+
+$a = 500;
+$b = 70;
+$c = number_format ($b / $a * 100);
 ?>
 <div class="row">
 	<div class="col-md-3 col-sm-6 col-xs-12">
@@ -15,10 +19,10 @@ $this->params['breadcrumbs'][] = $this->title;
 		    <span class="info-box-text">Likes</span>
 		    <span class="info-box-number">41,410</span>
 		    <div class="progress">
-		      <div class="progress-bar" style="width: 70%"></div>
+		      <?= '<div class="progress-bar" style="width: ' . $c .'%"></div>' ?>
 		    </div>
 		    <span class="progress-description">
-		      70% Increase in 30 Days
+		      <?= $c ?>% Increase in 30 Days
 		    </span>
 		  </div>
 		</div>

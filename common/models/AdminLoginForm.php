@@ -10,17 +10,14 @@ class AdminLoginForm extends Model
     public $password;
     public $rememberMe = true;
 
-    private $_user;
+    private $_admin;
 
 
     public function rules()
     {
         return [
-            // username and password are both required
             [['username', 'password'], 'required'],
-            // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
-            // password is validated by validatePassword()
             ['password', 'validatePassword'],
         ];
     }
@@ -28,8 +25,8 @@ class AdminLoginForm extends Model
     public function validatePassword($attribute, $params)
     {
         if (!$this->hasErrors()) {
-            $user = $this->getUser();
-            if (!$user || !$user->validatePassword($this->password)) {
+            $admin = $this->getUser();
+            if (!$admin || !$admin->validatePassword($this->password)) {
                 $this->addError($attribute, 'Incorrect username or password.');
             }
         }
@@ -46,10 +43,10 @@ class AdminLoginForm extends Model
 
     protected function getUser()
     {
-        if ($this->_user === null) {
-            $this->_user = Admin::findByUsername($this->username);
+        if ($this->_admin === null) {
+            $this->_admin = Admin::findByUsername($this->username);
         }
 
-        return $this->_user;
+        return $this->_admin;
     }
 }

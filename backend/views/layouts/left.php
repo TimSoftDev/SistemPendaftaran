@@ -8,7 +8,7 @@
                 <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p>SSimg</p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -26,41 +26,40 @@
         </form>
         <!-- /.search form -->
 
+        <?php $menu = [
+            ['label' => 'Main Menu', 'options' => ['class' => 'header']],
+        ];
+
+            if (Yii::$app->user->isGuest) {                        
+                $menu[] = ['label' => 'Home', 'icon' => 'fa fa-home', 'url' => ['/']];
+                $menu[] = ['label' => 'Signup', 'icon' => 'fa fa-user', 'url' => ['/site/signup']];
+                $menu[] = ['label' => 'Sign In', 'icon' => 'fa fa-sign-in', 'url' => ['/site/login']];
+            } else {
+                $menu[] = ['label' => 'Dasboard', 'icon' => 'fa fa-dashboard', 'url' => ['/']];
+                $menu[] = ['label' => 'Gii', 'icon' => 'fa fa-file-code-o', 'url' => ['/gii']];
+                $menu[] = ['label' => 'Debug', 'icon' => 'fa fa-wrench', 'url' => ['/debug']];
+                $menu[] =
+                    [
+                        'label' => 'Info Terbaru</span><span class="pull-right-container"><small class="label pull-right bg-yellow">100</small>',
+                        'icon' => 'fa fa fa-envelope-o',
+                        'url' => ['/'],
+                        'encode' => false,
+                    ];
+                $menu[] =
+                    [
+                        'label' => 'Info Terbaru</span><span class="pull-right-container"><small class="label pull-right bg-aqua">100</small><small class="label pull-right bg-red">100</small>',
+                        'icon' => 'fa fa fa-instagram',
+                        'url' => ['/'],
+                        'encode' => false,
+                    ];
+            }
+
+        ?>
+
         <?= dmstr\widgets\Menu::widget(
             [
                 'options' => ['class' => 'sidebar-menu'],
-                'items' => [
-                    ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
-                    ['label' => 'Gii', 'icon' => 'fa fa-file-code-o', 'url' => ['/gii']],
-                    ['label' => 'Debug', 'icon' => 'fa fa-dashboard', 'url' => ['/debug']],
-                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
-                    [
-                        'label' => 'Same tools',
-                        'icon' => 'fa fa-share',
-                        'url' => '#',
-                        'items' => [
-                            ['label' => 'Gii', 'icon' => 'fa fa-file-code-o', 'url' => ['/gii'],],
-                            ['label' => 'Debug', 'icon' => 'fa fa-dashboard', 'url' => ['/debug'],],
-                            [
-                                'label' => 'Level One',
-                                'icon' => 'fa fa-circle-o',
-                                'url' => '#',
-                                'items' => [
-                                    ['label' => 'Level Two', 'icon' => 'fa fa-circle-o', 'url' => '#',],
-                                    [
-                                        'label' => 'Level Two',
-                                        'icon' => 'fa fa-circle-o',
-                                        'url' => '#',
-                                        'items' => [
-                                            ['label' => 'Level Three', 'icon' => 'fa fa-circle-o', 'url' => '#',],
-                                            ['label' => 'Level Three', 'icon' => 'fa fa-circle-o', 'url' => '#',],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
+                'items' => $menu,
             ]
         ) ?>
 

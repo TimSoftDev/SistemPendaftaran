@@ -11,7 +11,7 @@ use dmstr\widgets\Alert;
             <h1>
                 <?php
                 if ($this->title !== null) {
-                    echo \yii\helpers\Html::encode($this->title);
+                    echo \yii\helpers\Html::encode($this->title) . '<small>' . Yii::$app->user->identity->username . '</small>';
                 } else {
                     echo \yii\helpers\Inflector::camel2words(
                         \yii\helpers\Inflector::id2camel($this->context->module->id)
@@ -28,6 +28,8 @@ use dmstr\widgets\Alert;
             ]
         ) ?>
     </section>
+
+    <div class="spasi"></div>
 
     <section class="content">
         <?= Alert::widget() ?>

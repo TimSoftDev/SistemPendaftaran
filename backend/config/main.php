@@ -7,7 +7,7 @@ $params = array_merge(
 );
 
 use \yii\web\Request;
-$baseUrl = str_replace('/backend/web', '/siap', (new Request)->getBaseUrl());
+$baseUrl = str_replace('backend/web', 'siap', (new Request)->getBaseUrl());
 
 return [
     'id' => 'app-backend',
@@ -41,7 +41,7 @@ return [
             ],
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'portal/error',
         ],
         'urlManager' => [            
             'baseUrl' => $baseUrl,

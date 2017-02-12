@@ -4,7 +4,7 @@ Options -Indexes
   RewriteEngine on
 
   RewriteCond %{REQUEST_URI} !^public
-  RewriteRule ^siap(/.*)$ backend/web$1 [L]
+  RewriteRule ^siap(.*)$ backend/web/$1 [L]
   RewriteRule ^(.*)$ frontend/web/$1 [L]  
 </IfModule>
 

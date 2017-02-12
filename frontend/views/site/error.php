@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $message string */
 /* @var $exception Exception */
 
-$this->title = $name;
+$this->title = 'Not Found (#404)';
 ?>
 <section class="content">
 
@@ -15,10 +15,10 @@ $this->title = $name;
         <h2 class="headline text-info"><i class="fa fa-warning text-yellow"></i></h2>
 
         <div class="error-content">
-            <h3><?= $name ?></h3>
+            <h3><?= Html::encode($this->title) ?></h3>
 
             <p>
-                <?= nl2br(Html::encode($message)) ?>
+                Page not found. 
             </p>
 
             <p>

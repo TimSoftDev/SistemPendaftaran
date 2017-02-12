@@ -31,7 +31,15 @@ class UserController extends Controller
         return $this->render('index');
     }
 
+    public function actionProfil()
+    {
+        return $this->render('profil');
+    }
+
     public function actionJsoncalendar($start=NULL,$end=NULL,$_=NULL){
+
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
         $events = array();
         
         //Demo

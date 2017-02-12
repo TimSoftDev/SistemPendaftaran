@@ -1,11 +1,20 @@
 <?php
 use yii\helpers\Html;
 
-/* @var $this \yii\web\View */
-/* @var $content string */
-
 
 if (Yii::$app->controller->action->id === 'login') { 
+
+    echo $this->render(
+        'main-login',
+        ['content' => $content]
+    );
+} else if (Yii::$app->controller->action->id === 'lupa') { 
+
+    echo $this->render(
+        'main-login',
+        ['content' => $content]
+    );
+} else if (Yii::$app->controller->action->id === 'signup') { 
 
     echo $this->render(
         'main-login',

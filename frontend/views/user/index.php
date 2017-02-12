@@ -104,7 +104,7 @@ EOF;
                     'eventClick' => new JsExpression($JSEventClick),
                     'defaultDate' => date('Y-m-d')
               ],
-              'ajaxEvents' => Url::toRoute(['/user/jsoncalendar'])
+              'ajaxEvents' => Url::toRoute(['/site/jsoncalendar'])
             ));
         ?>        
 
