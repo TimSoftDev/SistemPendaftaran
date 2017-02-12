@@ -73,6 +73,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect('site/login');
+        }
+
         return $this->render('index');
     }
 
@@ -133,16 +137,6 @@ class SiteController extends Controller
     }
 
     /**
-     * Displays about page.
-     *
-     * @return mixed
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
-
-    /**
      * Signs user up.
      *
      * @return mixed
@@ -168,7 +162,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionRequestPasswordReset()
+    public function actionLupa()
     {
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {

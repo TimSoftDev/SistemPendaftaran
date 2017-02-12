@@ -33,7 +33,7 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed201
         <?= $form
             ->field($model, 'username', $fieldOptions1)
             ->label(false)
-            ->textInput(['placeholder' => $model->getAttributeLabel('username')]) ?>
+            ->textInput(['placeholder' => $model->getAttributeLabel('username'), 'autofocus' => true]) ?>
 
         <?= $form
             ->field($model, 'password', $fieldOptions2)
@@ -54,7 +54,7 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed201
         <?php ActiveForm::end(); ?>
 
         <div class="login-foot">
-            <a href="request-password-reset">Lupa Password? </a> |
+            <a href="lupa">Lupa Password? </a> |
             <a href="signup">Belum Punya Akun?</a> |
             <a href="help">Bantuan</a>
         </div>

@@ -14,6 +14,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'homeUrl' => $baseUrl,
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
