@@ -56,11 +56,11 @@ return [
             'bundles' => [
                 'dmstr\web\AdminLteAsset' => [
                     'skin' => 
-                        /*'skin-blue', 
-                        'skin-black',
-                        'skin-red', */
+                        'skin-blue', 
+                        /* 'skin-black',
+                        'skin-red',
                         'skin-yellow',
-                        /* 'skin-purple', 
+                        'skin-purple', 
                         'skin-green',
                         'skin-blue-light', 
                         'skin-black-light',

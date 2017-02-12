@@ -256,13 +256,13 @@ use yii\helpers\Html;
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                <a href="/user/profil" class="btn btn-primary btn-flat"><i class="fa fa-user"></i> Profil</a>
                             </div>
                             <div class="pull-right">
                                 <?= Html::a(
-                                    'Sign out',
+                                    '<i class="fa fa-sign-out"></i> Keluar',
                                     ['/site/logout'],
-                                    ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
+                                    ['data-method' => 'post', 'class' => 'btn btn-danger btn-flat']
                                 ) ?>
                             </div>
                         </li>

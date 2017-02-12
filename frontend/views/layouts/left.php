@@ -35,9 +35,23 @@
                 $menu[] = ['label' => 'Signup', 'icon' => 'fa fa-user', 'url' => ['/site/signup']];
                 $menu[] = ['label' => 'Sign In', 'icon' => 'fa fa-sign-in', 'url' => ['/site/login']];
             } else {
-                $menu[] = ['label' => 'Dasboard', 'icon' => 'fa fa-dashboard', 'url' => ['/user']];
+                $menu[] = ['label' => 'Dasboard', 'icon' => 'fa fa-dashboard', 'url' => ['/']];
                 $menu[] = ['label' => 'Gii', 'icon' => 'fa fa-file-code-o', 'url' => ['/gii']];
                 $menu[] = ['label' => 'Debug', 'icon' => 'fa fa-wrench', 'url' => ['/debug']];
+                $menu[] =
+                    [
+                        'label' => 'Info Terbaru</span><span class="pull-right-container"><small class="label pull-right bg-yellow">100</small>',
+                        'icon' => 'fa fa fa-envelope-o',
+                        'url' => ['/'],
+                        'encode' => false,
+                    ];
+                $menu[] =
+                    [
+                        'label' => 'Info Terbaru</span><span class="pull-right-container"><small class="label pull-right bg-aqua">100</small><small class="label pull-right bg-red">100</small>',
+                        'icon' => 'fa fa fa-instagram',
+                        'url' => ['/'],
+                        'encode' => false,
+                    ];
             }
 
         ?>

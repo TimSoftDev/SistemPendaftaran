@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use common\widgets\Alert;
 
 $this->title = 'Daftar';
 
@@ -26,6 +27,8 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed201
     <div class="login-logo">
         <a href="#"><img src="<?= $directoryAsset ?>/img/logo-uns.png" alt="<?= Html::encode($this->title) ?>" title="<?= Html::encode($this->title) ?>"/></a>
     </div>
+
+    <?= Alert::widget() ?>
 
     <div class="login-head">
         <p>Mohon diisi sesuai dengan data yang sebenarnya</p>
